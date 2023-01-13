@@ -11,8 +11,67 @@ namespace Negocio
     {
         public static List<Medico> Listar()
         {
-            //TODO...
-            return null;
+            List<Medico> listaMedicos = new List<Medico>();
+            listaMedicos.Add(new Medico() 
+            { 
+                Id = 123, 
+                Nombre = "Pedro",
+                Apellido = "Gomez",
+                Domicilio = "Misiones",
+                Telefono = "+54 111545365",
+                Email = "pedro@gmail.com",
+                Especialidad = "Clinico",
+                Matricula = 12345
+
+            });
+            listaMedicos.Add(new Medico()
+            {
+                Id = 1237,
+                Nombre = "Rodrigo",
+                Apellido = "Bueno",
+                Domicilio = "Cordoba",
+                Telefono = "+54 384653563",
+                Email = "rodrigo@gmail.com",
+                Especialidad = "Cirujano",
+                Matricula = 9898756
+
+            });
+            listaMedicos.Add(new Medico()
+            {
+                Id = 321,
+                Nombre = "Hector",
+                Apellido = "Perez",
+                Domicilio = "Santa Fe",
+                Telefono = "+54 3241563365",
+                Email = "hector@gmail.com",
+                Especialidad = "Cirujano",
+                Matricula = 55564
+
+            });
+            listaMedicos.Add(new Medico()
+            {
+                Id = 2121,
+                Nombre = "Pepe",
+                Apellido = "Gutierrez",
+                Domicilio = "Buenos Aires",
+                Telefono = "+54 3414545",
+                Email = "pepe@gmail.com",
+                Especialidad = "Pediatra",
+                Matricula = 66666
+            });
+            listaMedicos.Add(new Medico()
+            {
+                Id = 31233,
+                Nombre = "Juan",
+                Apellido = "Silva",
+                Domicilio = "Cordoba",
+                Telefono = "+54 341452445",
+                Email = "juan@gmail.com",
+                Especialidad = "Cirujano",
+                Matricula = 77777
+            });
+
+            return listaMedicos;
         }
         public static List<Medico> Listar(string especialidad)
         {
