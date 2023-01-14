@@ -32,7 +32,7 @@ namespace Negocio
                 Domicilio = "Cordoba",
                 Telefono = "+54 384653563",
                 Email = "rodrigo@gmail.com",
-                Especialidad = "Cirujano",
+                Especialidad = "Clinico",
                 Matricula = 9898756
 
             });
@@ -56,7 +56,7 @@ namespace Negocio
                 Domicilio = "Buenos Aires",
                 Telefono = "+54 3414545",
                 Email = "pepe@gmail.com",
-                Especialidad = "Pediatra",
+                Especialidad = "Clinico",
                 Matricula = 66666
             });
             listaMedicos.Add(new Medico()
@@ -92,6 +92,21 @@ namespace Negocio
         {
             //TODO...
             return null;
+        }
+
+        public static List<string> MedicosClinicos()
+        {
+            List<Medico> listaMedicos = AdmMedico.Listar();
+            List<string> listaClinicos = new List<string>();
+
+            foreach (Medico medico in listaMedicos)
+            {
+                if (medico.Especialidad == "Clinico")
+                {
+                    listaClinicos.Add($"{medico.Apellido} {medico.Nombre}");
+                }
+            }
+            return listaClinicos;
         }
 
     }
