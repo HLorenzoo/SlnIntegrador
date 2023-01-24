@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidadez;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,18 @@ namespace WindowsPresentacion
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            List<Medico> listaMedicos = AdmMedico.Listar();
+            List<Paciente> listaPacientes = AdmPaciente.Listar();
+
+            gridMedicos.DataSource = listaMedicos;
+            gridPacientes.DataSource = listaPacientes;
+
+            listClinicos.DataSource = AdmMedico.MedicosClinicos();
+            listHabitaciones.DataSource = AdmHabitacion.HabitacionesEstado();
         }
     }
 }
